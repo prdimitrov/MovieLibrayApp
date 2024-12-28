@@ -1,10 +1,12 @@
 package com.example.movielibrayapp.model;
 
+import android.widget.ImageView;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
 
-import java.util.List;
-
+import com.bumptech.glide.Glide;
 import com.example.movielibrayapp.BR;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -21,6 +23,17 @@ public class Movie extends BaseObservable {
     @SerializedName("poster_path")
     @Expose
     private String posterPath;
+    @BindingAdapter({"posterPath"})
+    public static void loadImage(ImageView imageView, String imgUrl) {
+        // Basic URL: "https://image.tmdb.org/t/p/w500/"
+        String imagePath = "https://image.tmdb.org/t/p/w500/" + imgUrl;
+
+        Glide.with(imageView.getContext())
+                .load(imagePath)
+                .into(imageView);
+    }
+
+
     @SerializedName("release_date")
     @Expose
     private String releaseDate;

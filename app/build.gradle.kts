@@ -39,6 +39,9 @@ dependencies {
     implementation (libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.swiperefreshlayout)
+    //Glide
+    implementation (libs.glide)
+    annotationProcessor(libs.compiler)
 
     implementation(libs.appcompat)
     implementation(libs.material)
