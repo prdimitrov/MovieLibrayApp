@@ -29,11 +29,16 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
     implementation (libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.swiperefreshlayout)
 
     implementation(libs.appcompat)
     implementation(libs.material)
